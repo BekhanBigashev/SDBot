@@ -1,0 +1,132 @@
+18-Mar-21 06:53:07 - response undefined
+18-Mar-21 06:53:48 - https://crm.profi-soft.kz/rest/3892/7sxambaurtype5jj/lists.element.get
+18-Mar-21 06:53:48 - Array
+(
+    [IBLOCK_TYPE_ID] => lists
+    [IBLOCK_ID] => 231
+    [FILTER] => Array
+        (
+            [PROPERTY_1425] => 77073826425
+            [PROPERTY_1439] => Array
+                (
+                    [0] => 1
+                    [1] => 2
+                    [2] => 4
+                )
+
+        )
+
+)
+
+18-Mar-21 06:53:49 - Array
+(
+)
+
+18-Mar-21 06:56:57 - https://crm.profi-soft.kz/rest/3892/7sxambaurtype5jj/lists.element.add
+18-Mar-21 06:56:57 - Array
+(
+    [IBLOCK_TYPE_ID] => lists
+    [IBLOCK_ID] => 231
+    [ELEMENT_CODE] => 1297abe34315787531924366f6932b0c
+    [NAME] => Заявка WhatsApp
+    [FIELDS] => Array
+        (
+            [NAME] => Заявка WhatsApp
+            [PROPERTY_1425] => 77073826425
+            [PROPERTY_1427] => 
+            [PROPERTY_1429] => Qwert
+            [PROPERTY_2257] => Я
+            [PROPERTY_1431] => Test
+            [PROPERTY_1433] => 18.03.2021 09:56:57
+            [PROPERTY_1439] => 1
+            [PROPERTY_1441] => 
+        )
+
+)
+
+18-Mar-21 06:56:57 - Новый запрос
+18-Mar-21 06:56:57 - 76368
+18-Mar-21 06:57:04 - https://crm.profi-soft.kz/rest/3892/7sxambaurtype5jj/lists.element.get
+18-Mar-21 06:57:04 - Array
+(
+    [IBLOCK_TYPE_ID] => lists
+    [IBLOCK_ID] => 231
+    [FILTER] => Array
+        (
+            [PROPERTY_1425] => 77073826425
+            [PROPERTY_1439] => Array
+                (
+                    [0] => 1
+                    [1] => 2
+                    [2] => 4
+                )
+
+        )
+
+)
+
+18-Mar-21 06:57:05 - Array
+(
+    [0] => Array
+        (
+            [ID] => 76368
+            [IBLOCK_ID] => 231
+            [NAME] => Заявка WhatsApp
+            [IBLOCK_SECTION_ID] => 
+            [CREATED_BY] => 3892
+            [BP_PUBLISHED] => Y
+            [CODE] => 1297abe34315787531924366f6932b0c
+            [PROPERTY_1425] => Array
+                (
+                    [462247] => 77073826425
+                )
+
+            [PROPERTY_2257] => Array
+                (
+                    [462256] => Я
+                )
+
+            [PROPERTY_1431] => Array
+                (
+                    [462249] => Test
+                )
+
+            [PROPERTY_1433] => Array
+                (
+                    [462250] => 18.03.2021 09:56:57
+                )
+
+            [PROPERTY_1429] => Array
+                (
+                    [462248] => Qwert
+                )
+
+            [PROPERTY_1439] => Array
+                (
+                    [462251] => 1
+                )
+
+            [PROPERTY_1617] => Array
+                (
+                    [462253] => 0
+                )
+
+            [PROPERTY_1619] => Array
+                (
+                    [462254] => 0
+                )
+
+            [PROPERTY_1621] => Array
+                (
+                    [462255] => 0
+                )
+
+            [PROPERTY_1441] => Array
+                (
+                    [462252] => 0
+                )
+
+        )
+
+)
+

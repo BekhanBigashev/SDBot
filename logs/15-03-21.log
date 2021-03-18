@@ -1,0 +1,70 @@
+15-Mar-21 06:29:42 - response undefined
+15-Mar-21 06:37:44 - https://crm.profi-soft.kz/rest/3892/7sxambaurtype5jj/lists.element.get
+15-Mar-21 06:37:44 - Array
+(
+    [IBLOCK_TYPE_ID] => lists
+    [IBLOCK_ID] => 231
+    [FILTER] => Array
+        (
+            [PROPERTY_1425] => 77073826425
+            [PROPERTY_1439] => Array
+                (
+                    [0] => 1
+                    [1] => 2
+                    [2] => 4
+                )
+
+        )
+
+)
+
+15-Mar-21 06:37:45 - Array
+(
+)
+
+15-Mar-21 06:38:10 - https://crm.profi-soft.kz/rest/3892/7sxambaurtype5jj/lists.element.get
+15-Mar-21 06:38:10 - Array
+(
+    [IBLOCK_TYPE_ID] => lists
+    [IBLOCK_ID] => 231
+    [FILTER] => Array
+        (
+            [PROPERTY_1425] => 77073826425
+            [PROPERTY_1439] => Array
+                (
+                    [0] => 1
+                    [1] => 2
+                    [2] => 4
+                )
+
+        )
+
+)
+
+15-Mar-21 06:38:10 - Array
+(
+)
+
+15-Mar-21 06:38:26 - https://crm.profi-soft.kz/rest/3892/7sxambaurtype5jj/lists.element.get
+15-Mar-21 06:38:26 - Array
+(
+    [IBLOCK_TYPE_ID] => lists
+    [IBLOCK_ID] => 231
+    [FILTER] => Array
+        (
+            [PROPERTY_1425] => 77073826425
+            [PROPERTY_1439] => Array
+                (
+                    [0] => 1
+                    [1] => 2
+                    [2] => 4
+                )
+
+        )
+
+)
+
+15-Mar-21 06:38:27 - Array
+(
+)
+

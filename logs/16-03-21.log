@@ -1,0 +1,23 @@
+16-Mar-21 11:44:01 - https://crm.profi-soft.kz/rest/3892/7sxambaurtype5jj/lists.element.get
+16-Mar-21 11:44:01 - Array
+(
+    [IBLOCK_TYPE_ID] => lists
+    [IBLOCK_ID] => 231
+    [FILTER] => Array
+        (
+            [PROPERTY_1425] => 77073826425
+            [PROPERTY_1439] => Array
+                (
+                    [0] => 1
+                    [1] => 2
+                    [2] => 4
+                )
+
+        )
+
+)
+
+16-Mar-21 11:44:01 - Array
+(
+)
+
