@@ -42,40 +42,40 @@ class ServiceDeskWABot{
 	    		if(!$message['fromMe']){
 	    			if ($message['chatId'] == "77073826425@c.us") {
 	    				$user = $this->processingUser($message);
-	    				$state = $this->getUserState($user['id']);
+	    				$state = $this->getUserState($message["chatId"]);
 	    				$state_n = $state['wa_state'];
 	    				//$this->setUserState($user['id'],0);
 	    				if ($state_n == UserStates::MAIN) {	    				
 							$response = $this->processingContact($user['phone']);		
 							if(!$response){
 								add_log("response undefined");
-								$this->setUserState($user['id'],UserStates::COMPANYNAME);
+								$this->setUserState($message["chatId"],UserStates::COMPANYNAME);
 								$text = "Не найдена компания с таким номером телефона. Пожалуйста, отправьте название Вашей компании";
 								$this->sendMessage($message['chatId'], $text);
 							}else{
 								add_log("response defined".print_r($response,true));
 								$this->setUserCompany($user['id'],$response["ID"],$response["TITLE"]);
-								$this->setUserState($user['id'],UserStates::NEW_REQUEST);
+								$this->setUserState($message["chatId"],UserStates::NEW_REQUEST);
 								$text = "Здравствуйте, ".$message['senderName']."! Вы представляете компанию \"".$message['body']."\"\nПожалуйста, отправьте нам свой вопрос или нажмите '1' чтобы посмотреть список обращений";
 								$this->sendMessage($message['chatId'], $text);
 							}
 	    				}
 	    				elseif ($state_n == UserStates::COMPANYNAME) {
 	    					$this->setUserCompany($user['id'], 0, $message['body']);
-	    					$this->setUserState($user['id'],UserStates::NEW_REQUEST);
+	    					$this->setUserState($message["chatId"],UserStates::NEW_REQUEST);
 	    					$text = "Здравствуйте, ".$message['senderName']."! Вы представляете компанию \"".$message['body']."\"\nПожалуйста, отправьте нам свой вопрос или нажмите '1' чтобы посмотреть список обращений";
 	    					$this->sendMessage($message['chatId'], $text);
 	    				}
 						elseif($state_n == UserStates::NEW_REQUEST){
 							if($message['body']==1){
-								$this->setUserState($user['id'],UserStates::LIST_REQUEST);
+								$this->setUserState($message["chatId"],UserStates::LIST_REQUEST);
 								$text = $this->sendList($user);
 								$this->sendMessage($message['chatId'], $text);
 							}else{
-								$response = $request->newTicketFromWhatsApp($user['id'],$user["phone"],$message['body'],$user["company_name"],$user["company_id"],1,$message['senderName']);
+								$response = $request->newTicketFromWhatsApp($message['chatId'],$user["phone"],$message['body'],$user["company_name"],$user["company_id"],1,$message['senderName']);
 								add_log("Новый запрос");
 								add_log(print_r($response,true));
-								$this->setUserState($user['id'],UserStates::EDIT_REQUEST, $response);
+								$this->setUserState($message["chatId"],UserStates::EDIT_REQUEST, $response);
 								$text = "Ваше обращение принято! Номер вашего обращения - $response";
 								$text .= "\nНажмите цифру для выбора:\n1.Создать новое обращение\n2.Посмотреть список обращений\n\nЧтобы дополнить текущее обращение просто отправьте сообщение.";
 								$this->sendMessage($message['chatId'], $text);
@@ -83,7 +83,7 @@ class ServiceDeskWABot{
 						}
 						elseif($state_n == UserStates::LIST_REQUEST){
 							if ($message['body'] == 1) {
-								$this->setUserState($user['id'],UserStates::NEW_REQUEST);
+								$this->setUserState($message["chatId"], UserStates::NEW_REQUEST);
 								$this->sendQuestion($message);
 							}
 							elseif ($message['body'] == 2) {
@@ -97,11 +97,11 @@ class ServiceDeskWABot{
 						}
 						elseif($state_n == UserStates::EDIT_REQUEST){
 							if ($message['body'] == 1) {
-								$this->setUserState($user['id'],UserStates::NEW_REQUEST);
+								$this->setUserState($message["chatId"],UserStates::NEW_REQUEST);
 								$this->sendQuestion($message);
 							}
 							elseif ($message['body'] == 2) {
-								$this->setUserState($user['id'],UserStates::LIST_REQUEST);
+								$this->setUserState($message["chatId"],UserStates::LIST_REQUEST);
 								$text = $this->sendList($user);
 								$this->sendMessage($message['chatId'], $text);
 							}
@@ -244,7 +244,7 @@ class ServiceDeskWABot{
 			);
 			$user_id = $db->insertTo("users",$insert_data);
 			//add_log(print_r($user, true));
-			$db->insertTo("user_state",array("user_id"=>$user_id,"wa_state"=>0));
+			$db->insertTo("user_state",array("user_id"=>$message["chatId"],"wa_state"=>0));
 			$user = $db->selectOne("users", "*", "id=".$user_id);
 			return $user;
 		}
